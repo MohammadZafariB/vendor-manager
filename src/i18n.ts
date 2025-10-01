@@ -15,7 +15,7 @@ i18n
       ar: { translation: ar },
       en: { translation: en }
     },
-    fallbackLng: "en", // اگر زبان پیدا نشد، انگلیسی نمایش داده شود
+    fallbackLng: "fa", // اگر زبان پیدا نشد، انگلیسی نمایش داده شود
     interpolation: { escapeValue: false }
   });
 
