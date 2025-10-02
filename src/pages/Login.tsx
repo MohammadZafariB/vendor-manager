@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "../supabaseClient.ts";
 import { toast } from "react-toastify";
+import { Link } from "react-router-dom";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -107,12 +108,9 @@ export default function Login() {
         {/* لینک ثبت‌نام */}
         <p className="mt-6 text-center text-sm text-gray-600 dark:text-gray-400">
           حساب کاربری ندارید؟{" "}
-          <a
-            href="/register"
-            className="text-blue-600 dark:text-blue-400 hover:underline"
-          >
-            ثبت‌نام
-          </a>
+
+            <Link to="/register"  className="text-blue-600 dark:text-blue-400 hover:underline">ثبت نام</Link>
+
         </p>
       </div>
     </div>
