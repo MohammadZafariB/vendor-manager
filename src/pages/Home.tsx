@@ -1,9 +1,9 @@
 // src/pages/Home.tsx
 import { useState } from "react";
-import Layout from "../components/Layout";
-import MapView from "../components/MapView";
-import VendorList from "../components/VendorList";
-import AddVendorModal from "../components/AddVendorModal";
+import Layout from "../components/Layout.tsx";
+import MapView from "../components/MapView.tsx";
+import VendorList from "../components/VendorList.tsx";
+import AddVendorModal from "../components/AddVendorModal.tsx";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 // import { useAuth } from "../contexts/AuthContext";

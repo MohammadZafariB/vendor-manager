@@ -1,14 +1,14 @@
 // src/App.tsx
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { VendorProvider } from "./contexts/VendorContext";
-import { AuthProvider } from "./contexts/AuthContext";
-import ResetPassword from "./pages/ResetPassword";
+import { VendorProvider } from "./contexts/VendorContext.tsx";
+import { AuthProvider } from "./contexts/AuthContext.tsx";
+import ResetPassword from "./pages/ResetPassword.tsx";
 import { ToastContainer } from "react-toastify";
-import Home from "./pages/Home";
-import Login from "./pages/Login";
-import Register from "./pages/Register";
-import PersonalInfo from "./pages/PersonalInfo"; // 👈 صفحه جدید
-import PrivateRoute from "./components/PrivateRoute";
+import Home from "./pages/Home.tsx";
+import Login from "./pages/Login.tsx";
+import Register from "./pages/Register.tsx";
+import PersonalInfo from "./pages/PersonalInfo.tsx"; // 👈 صفحه جدید
+import PrivateRoute from "./components/PrivateRoute.tsx";
 
 export default function App() {
   return (

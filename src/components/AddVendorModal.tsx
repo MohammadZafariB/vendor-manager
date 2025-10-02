@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { useVendors } from "../contexts/VendorContext";
+import { useVendors } from "../contexts/VendorContext.tsx";
 import { toast } from "react-toastify"; // فقط import toast
-import { useAuth } from "../contexts/AuthContext";
+import { useAuth } from "../contexts/AuthContext.tsx";
 
 interface AddVendorModalProps {
   isOpen: boolean;

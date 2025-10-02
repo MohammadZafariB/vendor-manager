@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import type { Vendor } from "../contexts/VendorContext";
+import type { Vendor } from "../contexts/VendorContext.tsx";
 
 interface EditVendorModalProps {
   isOpen: boolean;

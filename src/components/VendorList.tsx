@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { toast } from "react-toastify";
-import { useVendors } from "../contexts/VendorContext";
-import ConfirmModal from "./ConfirmModal";
-import EditVendorModal from "./EditVendorModal";
-import type { Vendor } from "../contexts/VendorContext"; // ✅ اضافه شد
+import { useVendors } from "../contexts/VendorContext.tsx";
+import ConfirmModal from "./ConfirmModal.tsx";
+import EditVendorModal from "./EditVendorModal.tsx";
+import type { Vendor } from "../contexts/VendorContext.tsx"; // ✅ اضافه شد
 
 export default function VendorList() {
   const {

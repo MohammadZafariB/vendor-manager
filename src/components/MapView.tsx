@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
-import { useVendors } from "../contexts/VendorContext";
+import { useVendors } from "../contexts/VendorContext.tsx";
 import L from "leaflet";
 
 function MapCenter({ position }: { position?: [number, number] | null }) {

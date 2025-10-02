@@ -1,6 +1,6 @@
 // src/pages/ForgotPassword.tsx
 import React, { useState } from "react";
-import { supabase } from "../supabaseClient";
+import { supabase } from "../supabaseClient.ts";
 import { toast } from "react-toastify";
 
 export default function ForgotPassword() {

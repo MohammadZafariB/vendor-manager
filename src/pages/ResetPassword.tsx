@@ -1,7 +1,7 @@
 // src/pages/ResetPassword.tsx
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { supabase } from "../supabaseClient";
+import { supabase } from "../supabaseClient.ts";
 import { toast } from "react-toastify";
 
 export default function ResetPassword() {

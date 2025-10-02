@@ -1,8 +1,8 @@
 // src/pages/PersonalInfo.tsx
 import { useState, useEffect } from "react";
-import { useAuth } from "../contexts/AuthContext";
-import { supabase } from "../supabaseClient";
-import { useVendors } from "../contexts/VendorContext";
+import { useAuth } from "../contexts/AuthContext.tsx";
+import { supabase } from "../supabaseClient.ts";
+import { useVendors } from "../contexts/VendorContext.tsx";
 import { toast } from "react-toastify";
 
 export default function PersonalInfo() {

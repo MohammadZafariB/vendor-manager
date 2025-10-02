@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
-import { supabase } from "../supabaseClient";
-import { useAuth } from "./AuthContext"; 
+import { supabase } from "../supabaseClient.ts";
+import { useAuth } from "./AuthContext.tsx"; 
 
 // تعریف نوع Vendor
 export type Vendor = {

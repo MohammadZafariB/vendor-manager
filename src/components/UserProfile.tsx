@@ -1,5 +1,5 @@
 // src/components/UserProfile.tsx
-import { useAuth } from "../contexts/AuthContext";
+import { useAuth } from "../contexts/AuthContext.tsx";
 import { useNavigate } from "react-router-dom";
 
 export default function UserProfile() {

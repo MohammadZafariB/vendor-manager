@@ -1,7 +1,7 @@
 // src/components/Header.tsx
 import React, { useState } from "react";
-import LogoutButton from "./LogoutButton";
-import UserProfile from "./UserProfile";
+import LogoutButton from "./LogoutButton.tsx";
+import UserProfile from "./UserProfile.tsx";
 import { HiMenu, HiX } from "react-icons/hi";
 
 interface HeaderProps {
