@@ -1,4 +1,3 @@
-// src/components/Header.tsx
 import React, { useState } from "react";
 import LogoutButton from "./LogoutButton.tsx";
 import UserProfile from "./UserProfile.tsx";
@@ -21,17 +20,14 @@ export default function Header({ onSearch }: HeaderProps) {
   return (
     <header className="bg-gray-800 dark:bg-gray-900 text-white shadow p-4">
       <div className="flex items-center justify-between">
-        {/* عنوان */}
         <h1 className="text-xl font-bold">Vendor Manager</h1>
 
-        {/* دکمه همبرگر برای موبایل */}
         <div className="md:hidden">
           <button onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? <HiX size={28} /> : <HiMenu size={28} />}
           </button>
         </div>
 
-        {/* آیتم‌ها در دسکتاپ */}
         <div className="hidden md:flex items-center gap-4">
           {onSearch && (
             <input
@@ -47,7 +43,6 @@ export default function Header({ onSearch }: HeaderProps) {
         </div>
       </div>
 
-      {/* منوی موبایل */}
       {isOpen && (
         <div className="mt-4 flex flex-col gap-4 md:hidden">
           {onSearch && (

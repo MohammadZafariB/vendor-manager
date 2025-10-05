@@ -2,7 +2,6 @@ import React, { createContext, useContext, useEffect, useState } from "react";
 import { supabase } from "../supabaseClient.ts";
 import { useAuth } from "./AuthContext.tsx"; 
 
-// تعریف نوع Vendor
 export type Vendor = {
   id: string;
   name: string;
@@ -31,10 +30,9 @@ const VendorContext = createContext<VendorContextType | undefined>(undefined);
 export const VendorProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [vendors, setVendors] = useState<Vendor[]>([]);
   const [selectedVendorId, setSelectedVendorId] = useState<string | null>(null);
-  const [searchQuery, setSearchQuery] = useState(""); // 🔹 اضافه شد
+  const [searchQuery, setSearchQuery] = useState("");
   const { user } = useAuth();
 
-  // بارگذاری Vendorها فقط برای کاربر جاری
   useEffect(() => {
     const fetchVendors = async () => {
       if (!user) {
@@ -58,7 +56,6 @@ export const VendorProvider: React.FC<{ children: React.ReactNode }> = ({ childr
     fetchVendors();
   }, [user]);
 
-  // افزودن وندور
   const addVendor = async (vendor: Omit<Vendor, "id" | "created_at" >) => {
     if (!user) return;
 
@@ -77,7 +74,6 @@ export const VendorProvider: React.FC<{ children: React.ReactNode }> = ({ childr
     }
   };
 
-  // حذف وندور
   const removeVendor = async (id: string) => {
     const { error } = await supabase.from("vendors").delete().eq("id", id);
 
@@ -89,7 +85,6 @@ export const VendorProvider: React.FC<{ children: React.ReactNode }> = ({ childr
     }
   };
 
-  // ویرایش وندور
   const updateVendor = async (vendor: Vendor) => {
     const { error } = await supabase
       .from("vendors")
@@ -122,8 +117,8 @@ export const VendorProvider: React.FC<{ children: React.ReactNode }> = ({ childr
         updateVendor,
         selectedVendorId,
         setSelectedVendorId,
-        searchQuery,       // 🔹 اضافه شد
-        setSearchQuery,    // 🔹 اضافه شد
+        searchQuery,
+        setSearchQuery,
       }}
     >
       {children}

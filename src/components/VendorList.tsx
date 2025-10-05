@@ -3,7 +3,7 @@ import { toast } from "react-toastify";
 import { useVendors } from "../contexts/VendorContext.tsx";
 import ConfirmModal from "./ConfirmModal.tsx";
 import EditVendorModal from "./EditVendorModal.tsx";
-import type { Vendor } from "../contexts/VendorContext.tsx"; // ✅ اضافه شد
+import type { Vendor } from "../contexts/VendorContext.tsx";
 
 export default function VendorList() {
   const {
@@ -12,7 +12,7 @@ export default function VendorList() {
     updateVendor,
     setSelectedVendorId,
     selectedVendorId,
-    searchQuery, // ✅ گرفتن از context
+    searchQuery,
   } = useVendors();
 
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
@@ -21,7 +21,6 @@ export default function VendorList() {
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
   const [vendorToEdit, setVendorToEdit] = useState<Vendor | null>(null);
 
-  // ✅ فیلتر وندورها بر اساس searchQuery
   const filteredVendors = vendors.filter((v) =>
     v.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
@@ -32,7 +31,6 @@ export default function VendorList() {
     setIsEditModalOpen(false);
   };
 
-  // حذف وندور
   const handleDeleteClick = (id: string) => {
     setVendorToDelete(id);
     setIsDeleteModalOpen(true);
@@ -49,7 +47,6 @@ toast.success("وندور با موفقیت حذف شد!", {
     setIsDeleteModalOpen(false);
   };
 
-  // ویرایش وندور
   const handleEditClick = (vendor: Vendor) => {
     setVendorToEdit(vendor);
     setIsEditModalOpen(true);
@@ -74,7 +71,6 @@ toast.success("وندور با موفقیت حذف شد!", {
                     : "hover:bg-green-100 dark:hover:bg-green-700"
                 }`}
             >
-              {/* لوگو + اطلاعات */}
               <div className="flex items-center gap-3">
                 {v.logo && (
                   <img
@@ -97,7 +93,6 @@ toast.success("وندور با موفقیت حذف شد!", {
                 </div>
               </div>
 
-              {/* دکمه‌ها */}
               <div className="flex gap-2">
                 <button
                   onClick={(e) => {
@@ -124,7 +119,6 @@ toast.success("وندور با موفقیت حذف شد!", {
         </ul>
       )}
 
-      {/* مدال تأیید حذف */}
       <ConfirmModal
         isOpen={isDeleteModalOpen}
         onClose={() => setIsDeleteModalOpen(false)}
@@ -132,7 +126,6 @@ toast.success("وندور با موفقیت حذف شد!", {
         message="آیا مطمئن هستید که می‌خواهید این وندور را حذف کنید؟"
       />
 
-      {/* مدال ویرایش */}
       <EditVendorModal
         isOpen={isEditModalOpen}
         vendor={vendorToEdit}

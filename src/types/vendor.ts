@@ -1,4 +1,3 @@
-// src/types/vendor.ts
 
 export type LatLng = {
   lat: number

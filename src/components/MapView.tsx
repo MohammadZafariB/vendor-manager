@@ -7,7 +7,7 @@ function MapCenter({ position }: { position?: [number, number] | null }) {
   const map = useMap();
   useEffect(() => {
     if (position) {
-      map.flyTo(position, 10, { duration: 0.8 }); // زوم روی وندور انتخابی
+      map.flyTo(position, 10, { duration: 0.8 });
     }
   }, [position, map]);
   return null;
@@ -20,28 +20,26 @@ export default function MapView() {
 
   return (
     <MapContainer
-      center={[35.7, 51.4]} // مرکز اولیه (تهران)
+      center={[35.7, 51.4]}
       zoom={6}
       style={{ height: "100%", width: "100%" }}
     >
       <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
 
-      {/* مارکر همه وندورها */}
       {vendors.map((v) => {
         if (!v.location_lat || !v.location_lng) return null;
 
-        // 📌 اگر وندور لوگو داشته باشد، از آن استفاده می‌کنیم
         const customIcon = v.logo
           ? L.icon({
               iconUrl: v.logo,
-              iconSize: [40, 40], // اندازه لوگو
+              iconSize: [40, 40],
               iconAnchor: [20, 40],
               popupAnchor: [0, -40],
-              className: "rounded-full border border-gray-300", // دایره‌ای و شیک
+              className: "rounded-full border border-gray-300",
             })
           : L.icon({
               iconUrl:
-                "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png", // آیکون پیش‌فرض
+                "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png",
               shadowUrl:
                 "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
               iconSize: [25, 41],
@@ -66,7 +64,6 @@ export default function MapView() {
         );
       })}
 
-      {/* وقتی وندور انتخاب شد → پرواز روی مختصاتش */}
       <MapCenter
         position={
           selected && selected.location_lat && selected.location_lng

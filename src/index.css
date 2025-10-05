@@ -2,4 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-/* اختیاری: استایل برای اسکلتون یا بازپخش */
+.rtl {
+  @apply text-right;
+  direction: rtl;
+}
+body {
+  @apply text-right;
+  direction: rtl;
+}

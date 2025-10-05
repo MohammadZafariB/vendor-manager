@@ -1,7 +1,8 @@
-// src/pages/Register.tsx
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { supabase } from "../supabaseClient.ts";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Register() {
   const [name, setName] = useState("");
@@ -14,36 +15,29 @@ export default function Register() {
     e.preventDefault();
 
     if (password !== confirmPassword) {
-      alert("رمز عبور و تأیید آن مطابقت ندارند!");
+      toast.error("رمز عبور و تأیید آن مطابقت ندارند!", { position: "top-center" });
       return;
     }
 
-    // ثبت‌نام کاربر در Supabase
-    const { error } = await supabase.auth.signUp({
-      email,
-      password,
-    });
+    const { error } = await supabase.auth.signUp({ email, password });
 
     if (error) {
-      alert(error.message);
+      toast.error("خطا در ثبت‌نام: " + error.message, { position: "top-center" });
       return;
     }
 
-    // اگر خواستید می‌توانید نام کاربر را در جدول users خود ذخیره کنید
-    // مثلا: await supabase.from("profiles").insert({ id: data.user?.id, name });
-
-    alert("ثبت‌نام موفق! لطفاً ایمیل خود را بررسی کنید.");
+    toast.success("ثبت‌نام موفق! لطفاً ایمیل خود را بررسی کنید.", { position: "top-center" });
     navigate("/login");
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-900">
-      <div className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg w-full max-w-md">
-        <h2 className="text-2xl font-bold text-center text-gray-800 dark:text-gray-200 mb-6">
+    <div className="flex items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-900 px-4">
+      <div className="bg-white dark:bg-gray-800 p-6 sm:p-8 rounded-2xl shadow-lg w-full max-w-md">
+        <h2 className="text-xl sm:text-2xl font-bold text-center text-gray-800 dark:text-gray-200 mb-6">
           ثبت‌نام
         </h2>
 
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-4 text-right">
           <div>
             <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
               نام
@@ -53,8 +47,8 @@ export default function Register() {
               value={name}
               onChange={(e) => setName(e.target.value)}
               required
-              className="mt-1 block w-full p-2 border border-gray-300 dark:border-gray-600 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:outline-none dark:bg-gray-700 dark:text-gray-200"
               placeholder="نام خود را وارد کنید"
+              className="mt-1 block w-full p-2 text-sm sm:text-base border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:outline-none dark:bg-gray-700 dark:text-gray-200"
             />
           </div>
 
@@ -67,8 +61,8 @@ export default function Register() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
-              className="mt-1 block w-full p-2 border border-gray-300 dark:border-gray-600 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:outline-none dark:bg-gray-700 dark:text-gray-200"
               placeholder="ایمیل خود را وارد کنید"
+              className="mt-1 block w-full p-2 text-sm sm:text-base border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:outline-none dark:bg-gray-700 dark:text-gray-200"
             />
           </div>
 
@@ -81,8 +75,8 @@ export default function Register() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
-              className="mt-1 block w-full p-2 border border-gray-300 dark:border-gray-600 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:outline-none dark:bg-gray-700 dark:text-gray-200"
               placeholder="رمز عبور خود را وارد کنید"
+              className="mt-1 block w-full p-2 text-sm sm:text-base border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:outline-none dark:bg-gray-700 dark:text-gray-200"
             />
           </div>
 
@@ -95,27 +89,35 @@ export default function Register() {
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
               required
-              className="mt-1 block w-full p-2 border border-gray-300 dark:border-gray-600 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:outline-none dark:bg-gray-700 dark:text-gray-200"
               placeholder="رمز عبور خود را مجدداً وارد کنید"
+              className="mt-1 block w-full p-2 text-sm sm:text-base border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:outline-none dark:bg-gray-700 dark:text-gray-200"
             />
           </div>
 
           <button
             type="submit"
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg shadow-md transition"
+            className="w-full bg-blue-600 hover:bg-blue-700 text-white text-sm sm:text-base py-2 rounded-lg shadow-md transition"
           >
             ثبت‌نام
           </button>
         </form>
-
+<div className="text-center mt-4">
+  <button
+    onClick={() => navigate("/landing")}
+    className="text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 hover:underline transition"
+  >
+    بازگشت به صفحه اصلی
+  </button>
+</div>
         <p className="mt-6 text-center text-sm text-gray-600 dark:text-gray-400">
           قبلاً حساب کاربری دارید؟{" "}
-          <a href="/login" className="text-blue-600 dark:text-blue-400 hover:underline">
+          <Link to="/login" className="text-blue-600 dark:text-blue-400 hover:underline">
             ورود
-          </a>
+          </Link>
         </p>
       </div>
+
+      <ToastContainer />
     </div>
   );
 }
-

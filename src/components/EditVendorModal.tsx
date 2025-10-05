@@ -23,7 +23,7 @@ export default function EditVendorModal({ isOpen, vendor, onClose, onSave }: Edi
       setContact(vendor.contact || "");
       setLat(vendor.location_lat ?? "");
       setLng(vendor.location_lng ?? "");
-      setLogo((vendor as any).logo || ""); // اگر ستون لوگو دارید
+      setLogo((vendor as any).logo || "");
     }
   }, [vendor]);
 
@@ -37,7 +37,7 @@ export default function EditVendorModal({ isOpen, vendor, onClose, onSave }: Edi
       contact: contact || undefined,
       location_lat: lat === "" ? undefined : Number(lat),
       location_lng: lng === "" ? undefined : Number(lng),
-      logo: logo || undefined, // ذخیره لوگو
+      logo: logo || undefined,
     });
     onClose();
   };
@@ -83,7 +83,6 @@ export default function EditVendorModal({ isOpen, vendor, onClose, onSave }: Edi
           className="w-full mb-2 p-2 border rounded"
         />
 
-        {/* فیلد لوگو */}
         <input
           type="text"
           placeholder="آدرس لوگو"
@@ -92,7 +91,6 @@ export default function EditVendorModal({ isOpen, vendor, onClose, onSave }: Edi
           className="w-full mb-2 p-2 border rounded"
         />
 
-        {/* پیش‌نمایش لوگو */}
         {logo && (
           <div className="mb-2">
             <img src={logo} alt="لوگو" className="w-20 h-20 object-contain rounded border" />

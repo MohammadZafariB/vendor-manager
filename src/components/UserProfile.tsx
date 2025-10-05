@@ -1,4 +1,3 @@
-// src/components/UserProfile.tsx
 import { useAuth } from "../contexts/AuthContext.tsx";
 import { useNavigate } from "react-router-dom";
 
@@ -6,7 +5,7 @@ export default function UserProfile() {
   const { user } = useAuth();
   const navigate = useNavigate();
 
-  if (!user) return null; // اگر لاگین نباشد، پروفایل نشان داده نمی‌شود
+  if (!user) return null;
 
   return (
     <div

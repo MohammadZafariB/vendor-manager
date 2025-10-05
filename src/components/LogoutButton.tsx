@@ -6,15 +6,12 @@ export default function LogoutButton() {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    // پاک کردن اطلاعات کاربر (توکن یا هر داده ذخیره‌شده)
     localStorage.removeItem("authToken");
-    // هدایت به صفحه لاگین
-    navigate("/login");
+    navigate("/landing");
   };
 
   return (
     <div>
-      {/* دکمه خروج */}
       <button
         onClick={() => setIsConfirmOpen(true)}
         className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded shadow"
@@ -22,7 +19,6 @@ export default function LogoutButton() {
         خروج از حساب
       </button>
 
-      {/* مدال تأیید */}
       {isConfirmOpen && (
         <div className="fixed inset-0 flex items-center justify-center bg-black/50 z-50">
           <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
