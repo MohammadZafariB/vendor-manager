@@ -7,7 +7,13 @@ export default function Hero() {
   const navigate = useNavigate();
 
   return (
-    <section className="relative bg-gradient-to-b from-gray-800 via-gray-900 to-black text-white py-20 sm:py-28 overflow-hidden">
+<section
+  className="
+    relative overflow-hidden text-white py-20 sm:py-28 
+    bg-gradient-to-b from-gray-600 via-gray-700 to-black
+    dark:from-gray-800 dark:via-gray-900 dark:to-black
+  "
+>
       <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
 
       {/* دکمه تغییر تم */}
