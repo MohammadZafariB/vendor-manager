@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { ArrowRight, Sparkles } from "lucide-react";
-import ThemeToggleButton from "./ThemeToggleButton";
+import ThemeToggleButton from "./ThemeToggleButton.tsx";
 
 export default function Hero() {
   const navigate = useNavigate();
