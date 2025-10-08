@@ -11,7 +11,7 @@ export default function Home() {
 
   return (
     <Layout>
-      <div className="flex justify-end p-3 md:p-4">
+      <div className="flex justify-end p-3 md:p-4 ">
         <button
           onClick={() => setIsModalOpen(true)}
           className="bg-green-600 hover:bg-green-700 text-white text-sm md:text-base px-3 md:px-4 py-2 rounded-lg shadow transition"

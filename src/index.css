@@ -7,6 +7,6 @@
   direction: rtl;
 }
 body {
-  @apply text-right;
-  direction: rtl;
+  direction: ltr;
+  text-align: right;
 }

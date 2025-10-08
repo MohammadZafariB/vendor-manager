@@ -18,7 +18,7 @@ export default function Landing() {
         </section>
 
         <section className="mb-12 sm:mb-16 lg:mb-20 max-w-md sm:max-w-lg lg:max-w-xl mx-auto">
-          <LoginForm compact redirectAfterLogin="/dashboard" />
+          <LoginForm compact redirectAfterLogin="/home" />
         </section>
 
         <section className="max-w-5xl mx-auto text-center" id="features">
@@ -45,6 +45,25 @@ export default function Landing() {
             />
             <p className="mt-3 sm:mt-4 text-sm sm:text-base lg:text-lg text-gray-700 dark:text-gray-300 leading-6 sm:leading-7 lg:leading-8 max-w-xl mx-auto">
               مشاهده و مدیریت همه وندورها روی نقشه با فیلتر، جستجو و ویرایش سریع.
+            </p>
+          </div>
+          <div className="mb-8 sm:mb-10 lg:mb-12">
+            <img
+              src="/dark-theme.png"
+              alt="نمایش وندورها"
+              className="rounded-lg shadow-lg mx-auto w-full sm:w-3/4 lg:w-1/1"
+            />
+            <p className="mt-3 sm:mt-4 text-sm sm:text-base lg:text-lg text-gray-700 dark:text-gray-300 leading-6 sm:leading-7 lg:leading-8 max-w-xl mx-auto">
+وجود حالت دارک مود و امکان تغییر تم            </p>
+          </div>
+          <div className="mb-8 sm:mb-10 lg:mb-12">
+            <img
+              src="/fully-responsive.png"
+              alt="نمایش وندورها"
+              className="rounded-lg shadow-lg mx-auto w-full sm:w-3/4 lg:w-1/1"
+            />
+            <p className="mt-3 sm:mt-4 text-sm sm:text-base lg:text-lg text-gray-700 dark:text-gray-300 leading-6 sm:leading-7 lg:leading-8 max-w-xl mx-auto">
+ ریسپانسیو  روی تمام دستگاهها
             </p>
           </div>
         </section>

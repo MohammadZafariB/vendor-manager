@@ -67,8 +67,8 @@ toast.success("وندور با موفقیت حذف شد!", {
               className={`p-3 border rounded flex justify-between items-center cursor-pointer transition 
                 ${
                   selectedVendorId === v.id
-                    ? "bg-green-200 dark:bg-green-700"
-                    : "hover:bg-green-100 dark:hover:bg-green-700"
+                    ? "bg-green-200 dark:bg-green-500"
+                    : "hover:bg-green-100 dark:hover:bg-green-400"
                 }`}
             >
               <div className="flex items-center gap-3">
