@@ -52,35 +52,35 @@ export default function EditVendorModal({ isOpen, vendor, onClose, onSave }: Edi
           placeholder="نام"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          className="w-full mb-2 p-2 border rounded"
+          className="w-full mb-2 p-2 border rounded dark:text-gray-700"
         />
         <input
           type="text"
           placeholder="مالک"
           value={owner}
           onChange={(e) => setOwner(e.target.value)}
-          className="w-full mb-2 p-2 border rounded"
+          className="w-full mb-2 p-2 border rounded dark:text-gray-700"
         />
         <input
           type="text"
           placeholder="تماس"
           value={contact}
           onChange={(e) => setContact(e.target.value)}
-          className="w-full mb-2 p-2 border rounded"
+          className="w-full mb-2 p-2 border rounded dark:text-gray-700"
         />
         <input
           type="number"
           placeholder="عرض جغرافیایی"
           value={lat}
           onChange={(e) => setLat(e.target.value === "" ? "" : Number(e.target.value))}
-          className="w-full mb-2 p-2 border rounded"
+          className="w-full mb-2 p-2 border rounded dark:text-gray-700"
         />
         <input
           type="number"
           placeholder="طول جغرافیایی"
           value={lng}
           onChange={(e) => setLng(e.target.value === "" ? "" : Number(e.target.value))}
-          className="w-full mb-2 p-2 border rounded"
+          className="w-full mb-2 p-2 border rounded dark:text-gray-700"
         />
 
         <input
@@ -88,16 +88,16 @@ export default function EditVendorModal({ isOpen, vendor, onClose, onSave }: Edi
           placeholder="آدرس لوگو"
           value={logo}
           onChange={(e) => setLogo(e.target.value)}
-          className="w-full mb-2 p-2 border rounded"
+          className="w-full mb-2 p-2 border rounded dark:text-gray-700"
         />
 
         {logo && (
           <div className="mb-2">
-            <img src={logo} alt="لوگو" className="w-20 h-20 object-contain rounded border" />
+            <img src={logo} alt="لوگو" className="w-20 h-20 object-contain rounded border dark:text-gray-700" />
           </div>
         )}
 
-        <div className="flex justify-end gap-3 mt-4">
+        <div className="flex justify-end gap-3 mt-4 dark:text-gray-700">
           <button
             onClick={onClose}
             className="px-4 py-2 bg-gray-400 text-white rounded hover:bg-gray-500"

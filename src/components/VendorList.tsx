@@ -82,11 +82,11 @@ toast.success("وندور با موفقیت حذف شد!", {
                 <div>
                   <p className="font-bold">{v.name}</p>
                   {v.contact && (
-                    <p className="text-sm text-gray-600">📞 {v.contact}</p>
+                    <p className="text-sm text-gray-600 dark:text-white">📞 {v.contact}</p>
                   )}
-                  {v.owner && <p className="text-sm">👤 {v.owner}</p>}
+                  {v.owner && <p className="text-sm ">👤 {v.owner}</p>}
                   {v.location_lat && v.location_lng && (
-                    <p className="text-xs text-gray-500">
+                    <p className="text-xs text-gray-500  dark:text-white">
                       📍 lat: {v.location_lat}, lng: {v.location_lng}
                     </p>
                   )}

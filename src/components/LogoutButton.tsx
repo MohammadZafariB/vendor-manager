@@ -22,7 +22,7 @@ export default function LogoutButton() {
       {isConfirmOpen && (
         <div className="fixed inset-0 flex items-center justify-center bg-black/50 z-50">
           <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
-            <h2 className="text-lg font-semibold mb-4 text-black">
+            <h2 className="text-lg font-semibold mb-4 text-black  dark:text-white">
               آیا مطمئن هستید که می‌خواهید خارج شوید؟
             </h2>
             <div className="flex justify-end gap-4">

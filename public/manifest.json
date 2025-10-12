@@ -1,0 +1,21 @@
+{
+  "name": "اپرا - سامانه ارتباط هوشمند",
+  "short_name": "Opera",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#111827",
+  "description": "اپرا - سامانه B2B برای ارتباط هوشمند با وندورها و مشتریان",
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

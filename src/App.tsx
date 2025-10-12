@@ -9,6 +9,7 @@ import Register from "./pages/Register.tsx";
 import PersonalInfo from "./pages/PersonalInfo.tsx";
 import PrivateRoute from "./components/PrivateRoute.tsx";
 import Login from "./pages/Login.tsx";
+import { Navigate } from "react-router-dom";
 
 export default function App() {
   return (
@@ -35,7 +36,9 @@ export default function App() {
               }
             />
 
-            <Route path="*" element={<Landing />} />
+            <Route path="/landing" element={<Landing />} />
+  <Route path="/" element={<Landing />} />
+  <Route path="/landing" element={<Navigate to="/" replace />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/reset-password" element={<ResetPassword />} />

@@ -8,7 +8,10 @@ interface LoginFormProps {
   compact?: boolean;
 }
 
-export default function LoginForm({ redirectAfterLogin = "/", compact = false }: LoginFormProps) {
+export default function LoginForm({
+  redirectAfterLogin = "/home",
+  compact = false,
+}: LoginFormProps) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
@@ -16,7 +19,10 @@ export default function LoginForm({ redirectAfterLogin = "/", compact = false }:
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const { error } = await supabase.auth.signInWithPassword({ email, password });
+    const { error } = await supabase.auth.signInWithPassword({
+      email,
+      password,
+    });
 
     if (error) {
       toast.error(
@@ -108,21 +114,24 @@ export default function LoginForm({ redirectAfterLogin = "/", compact = false }:
 
         <p className="mt-5 sm:mt-6 text-center text-xs sm:text-sm text-gray-600 dark:text-gray-400">
           حساب کاربری ندارید؟{" "}
-          <Link to="/register" className="text-blue-600 dark:text-blue-400 hover:underline">
+          <Link
+            to="/register"
+            className="text-blue-600 dark:text-blue-400 hover:underline"
+          >
             ثبت‌نام
           </Link>
         </p>
       </div>
-      {!compact &&
-                <div className="text-center mt-4">
-  <button
-    onClick={() => navigate("/landing")}
-    className="text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 hover:underline transition"
-  >
-    بازگشت به صفحه اصلی
-  </button>
-</div>
-      }
+      {!compact && (
+        <div className="text-center mt-4">
+          <button
+            onClick={() => navigate("/landing")}
+            className="text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 hover:underline transition"
+          >
+            بازگشت به صفحه اصلی
+          </button>
+        </div>
+      )}
     </div>
   );
 }

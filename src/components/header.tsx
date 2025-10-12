@@ -24,7 +24,7 @@ export default function Header({ onSearch }: HeaderProps) {
         <h1 className="text-xl font-bold">Vendor Manager</h1>
 
         <div className="flex items-center gap-3 md:hidden">
-          <ThemeToggleButton /> {/* 👈 جایگزین دکمه قدیمی */}
+          <ThemeToggleButton />
           <button onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? <HiX size={28} /> : <HiMenu size={28} />}
           </button>
@@ -47,7 +47,6 @@ export default function Header({ onSearch }: HeaderProps) {
         </div>
       </div>
 
-      {/* 🔹 منوی موبایل */}
       {isOpen && (
         <div className="mt-4 flex flex-col gap-4 md:hidden">
           {onSearch && (
